@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+message MigrationPayload {
+  repeated OTPParameters otp_parameters = 1;
+  int32 batch_size = 2;
+  int32 batch_index = 3;
+  int32 batch_id = 4;
+  int32 version = 5;
+
+  message OTPParameters {
+    bytes secret = 1;
+    string name = 2;
+    string issuer = 3;
+    AuthenticatorType type = 4;
+    int64 counter = 5;
+    Algorithm algorithm = 6;
+    int32 digits = 7;
+  }
+
+  enum AuthenticatorType {
+    TOTP = 0;
+    HOTP = 1;
+  }
+
+  enum Algorithm {
+    ALGO_UNKNOWN = 0;
+    ALGO_SHA1 = 1;
+    ALGO_SHA256 = 2;
+    ALGO_SHA512 = 3;
+  }
+}

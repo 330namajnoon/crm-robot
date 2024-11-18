@@ -1,0 +1,25 @@
+{
+  "name": "robot",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "atob": "^2.1.2",
+    "child_process": "^1.0.2",
+    "node-pty": "^1.0.0",
+    "nodemon": "^3.1.7",
+    "otplib": "^12.0.1",
+    "protobufjs": "^7.4.0",
+    "puppeteer": "^23.6.0",
+    "sm-express-server": "^1.0.6"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

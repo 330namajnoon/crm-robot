@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DIGI ROBOT</title>
+        <link rel="stylesheet" href="./css/index.css" />
+    </head>
+    <body>
+        <img id="loading" class="loading-container" src="./images/loading-wtf.gif" alt="">
+        <div class="home-page">
+            <div class="form">
+                <h3>MIDIGI LOGIN</h3>
+                <div>
+                    <select id="midigiLoginCountry">
+                        <option value="es" selected>España</option>
+                        <option value="pt">Portugal</option>
+                    </select>
+                    <input list="urls" type="text" placeholder="URL" id="midigiLoginBase" />
+                    <input type="text" placeholder="Numero de documento" id="midigiLoginDocumentNumber" />
+                    <input type="text" placeholder="ID de contrato" id="midigiLoginContractId" />
+                    <input list="phonesEmails" type="text" placeholder="telefono movil" id="midigiLoginPhoneNumber" />
+                    <input type="text" placeholder="ID de cliente" id="midigiLoginClientId" />
+                    <input type="text" placeholder="Correo electronico" id="midigiLoginEmail" />
+                    <input type="button" value="LOGIN" id="midigiLoginButton" />
+                    <a class="link" id="midigiLoginUrl" target="_blank">Entra a midigi</a>
+                </div>
+            </div>
+            <div class="form">
+                <h3>TELEVENTA</h3>
+                <div>
+                    <select id="televentaCountry">
+                        <option value="es" selected>España</option>
+                        <option value="pt">Portugal</option>
+                    </select>
+                    <input list="urls" type="text" placeholder="URL" id="televentaBase" />
+                    <input type="button" value="LOGIN" id="televentaButton" />
+                    <a class="link" id="televentaUrl" target="_blank">Entra como televenta</a>
+                </div>
+            </div>
+        </div>
+        <datalist id="urls">
+            <option value="http://localhost:3000"></option>
+            <option value="http://localhost:5273"></option>
+        </datalist>
+        <script src="envaironment.js"></script>
+        <script src="./js/index.js" type="module"></script>
+    </body>
+</html>
