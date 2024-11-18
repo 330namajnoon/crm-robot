@@ -28,6 +28,7 @@ async function getSecretCodeService() {
 
         fs.writeFileSync("./secretKey.txt", secretKey);
         browser.close();
+        return secretKey;
     } catch (error) {
         browser?.close();
         throw error;

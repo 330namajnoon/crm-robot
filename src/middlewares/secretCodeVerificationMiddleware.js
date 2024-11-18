@@ -1,9 +1,8 @@
 const { getSecretCodeService } = require("../services");
 
 const secretCodeVerificationMiddleware = async (req, res, next) => {
-    const MIDIGI_SECRET_CODE = process.env.MIDIGI_SECRET_CODE;
-    console.log(MIDIGI_SECRET_CODE);
-    if (MIDIGI_SECRET_CODE)
+    const DIGIACOUNT_SECTRET_CODE = process.env.DIGIACOUNT_SECTRET_CODE;
+    if (!!DIGIACOUNT_SECTRET_CODE)
         next();
     else {
         await getSecretCodeService();
