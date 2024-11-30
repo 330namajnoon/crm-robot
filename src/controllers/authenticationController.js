@@ -7,6 +7,7 @@ const authenticationController = createController(async (_, res) => {
         await authenticationService();
         return successResponse(res, "Authentication successful");
     } catch (error) {
+        console.log(error);
         return errorResponse(res, error);
     }
 });

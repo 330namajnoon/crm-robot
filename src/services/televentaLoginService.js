@@ -1,10 +1,11 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
 const { loadSession } = require("../utils/puppeteerSession");
 const authenticationService = require("./authenticationService");
+const configuration = require("../../config");
 
 async function televentaLoginService({country = "es", base = ""}) {
-    const config = JSON.parse(process.env.COUNTRY_CONFIG);
-    const browserConfig = JSON.parse(process.env.BROWSER_CONFIG);
+    const config = configuration.COUNTRY_CONFIG;
+    const browserConfig = configuration.BROWSER_CONFIG;
     const browser = await puppeteer.launch(browserConfig);
     try {
         const page = await browser.newPage();
@@ -33,6 +34,7 @@ async function televentaLoginService({country = "es", base = ""}) {
             return `${base}?${token}`;
         }
     } catch (error) {
+        console.log(error);
         await browser.close();
         throw error;
     }

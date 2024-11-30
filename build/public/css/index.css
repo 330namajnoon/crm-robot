@@ -1,0 +1,137 @@
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.loading-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    display: none;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    object-fit: cover;
+}
+
+.active {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(29, 137, 167);
+}
+
+.form {
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form h3 {
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    font-family: sans-serif;
+    color: rgb(16, 69, 80);
+    
+}
+
+.form div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgb(16, 69, 80);
+    border-radius: 0 0 10px 10px;
+    flex-wrap: wrap;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.form input {
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: .5px solid black;
+    flex-basis: 40%;
+    
+}
+
+.form select {
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: .5px solid black;
+    flex-basis: 40%;
+    
+}
+
+.form input[type = "button"] {
+    flex-basis: 80%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 0px solid rgb(162, 162, 162);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.379);
+    background-color: rgb(0, 136, 255);
+    color: white;
+}
+
+.form input[type = "button"]:hover {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.639);
+    background-color: rgba(0, 136, 255, 0.75);
+}
+
+.form input[type = "button"]:active {
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.639);
+    background-color: rgba(0, 136, 255, 0.75);
+}
+
+.form .link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: none;
+    font-size: 30px;
+    color: white;
+}
+
+

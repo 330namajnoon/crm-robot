@@ -1,8 +1,9 @@
-const { default: puppeteer } = require("puppeteer");
+const { default: puppeteer } = require("puppeteer-core");
 const fs = require("fs");
+const config = require("../../config");
 
 async function getSecretCodeService() {
-    const browserConfig = JSON.parse(process.env.BROWSER_CONFIG);
+    const browserConfig = config.BROWSER_CONFIG;
     let browser;
 
     try {
@@ -30,6 +31,7 @@ async function getSecretCodeService() {
         browser.close();
         return secretKey;
     } catch (error) {
+        console.log(error);
         browser?.close();
         throw error;
     }

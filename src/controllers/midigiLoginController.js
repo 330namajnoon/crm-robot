@@ -22,6 +22,7 @@ const midigiLoginController = createController(async (req, res) => {
         });
         return successResponse(res, response);
     } catch (error) {
+        console.log(error);
         return errorResponse(res, error);
     }
 });

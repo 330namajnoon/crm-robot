@@ -33,12 +33,13 @@ import televentaLogin from "./televentaLogin.js";
             }
             loading(false);
         });
-        fetch("/data.json")
+        fetch(`${window.env.SERVER_URL}/v2/datalist`)
             .then((response) => response.json())
             .then((data) => {
                 const dataContainer = document.createElement("datalist");
                 dataContainer.id = "phonesEmails";
-                data.forEach((item) => {
+                console.log(data);
+                data.data.forEach((item) => {
                     const option = document.createElement("option");
                     option.value = item.value;
                     option.innerHTML = item.description;

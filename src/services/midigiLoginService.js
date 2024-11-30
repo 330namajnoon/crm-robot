@@ -1,6 +1,7 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
 const { loadSession } = require("../utils/puppeteerSession");
 const authenticationService = require("./authenticationService");
+const configuration = require("../../config");
 
 async function midigiLoginService({
     country = "es",
@@ -11,8 +12,8 @@ async function midigiLoginService({
     contractId = "",
     documentNumber = "",
 }) {
-    const browserConfig = JSON.parse(process.env.BROWSER_CONFIG);
-    const config = JSON.parse(process.env.COUNTRY_CONFIG);
+    const browserConfig = configuration.BROWSER_CONFIG;
+    const config = configuration.COUNTRY_CONFIG;
     let browser;
     try {
         browser = await puppeteer.launch(browserConfig);
@@ -47,7 +48,6 @@ async function midigiLoginService({
             await page.type("#documentNumber", documentNumber);
             await page.type("#contract", contractId);
             await page.click("#submit");
-            await page.waitForNavigation();
             await page.waitForSelector(".actionSelector", { timeout: 5000 });
             await page.select(".actionSelector", "loginAsMiDigi");
             const newPages = await Promise.all([
@@ -64,6 +64,7 @@ async function midigiLoginService({
             return loginToken;
         }
     } catch (error) {
+        console.log(error);
         browser.close();
         throw error;
     }

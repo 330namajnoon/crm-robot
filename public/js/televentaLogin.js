@@ -12,6 +12,7 @@ async function televentaLogin() {
         if (response.status !== 200) throw data;
         return data.data;
     } catch (error) {
+        console.log(error);
         throw error
     }
 }
