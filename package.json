@@ -5,23 +5,31 @@
   "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "dev": "electron . --remote-debugging-port=9222"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "adm-zip": "^0.5.16",
     "child_process": "^1.0.2",
     "os": "^0.1.2",
     "otplib": "^12.0.1",
     "puppeteer-core": "^23.9.0",
+    "puppeteer-in-electron": "^3.0.5",
     "sm-express-server": "^1.0.6"
   },
   "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-packager": "^17.1.2",
     "nodemon": "^3.1.7"
   },
   "pkg": {
-    "assets": []
+    "assets": [
+      "resources.zip",
+      "node_modules/electron/dist/Electron.app/Contents/MacOS/Electron"
+    ]
   }
 }

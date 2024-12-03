@@ -15,6 +15,7 @@ async function authenticationService() {
         await page.type("#inputEmail", config.RDSDB_USER);
         await page.type("#inputPassword", config.RDSDB_PASSWORD);
         await page.click(".mt-4.btn.btn-md.btn-primary.mt-3.w-100.g-recaptcha-custom");
+        await page.waitForSelector("#inputCode", { timeout: 10000 });
         await page.evaluate( async (code) => {
             let buffer = null;
             return await new Promise((resolve, reject) => {
